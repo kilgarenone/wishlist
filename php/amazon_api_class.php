@@ -8,9 +8,9 @@ include_once("memcached.php");
     class AmazonProductAPI extends Memcached
     {
 
-        private static $PUBLIC    = "AKIAJXGOJOYZ6GOS6S5Q";
-        private static $PRIVATE   = "GeQhM4mthsf6SalOL+ZRt+rS3npsq0NjbPxzNiDD";
-        private static $ASSOCIATE_TAG = "wish0d9-20";
+        private static $PUBLIC    = "";
+        private static $PRIVATE   = "";
+        private static $ASSOCIATE_TAG = "";
 
         private $public_key;
         private $private_key;
