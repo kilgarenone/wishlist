@@ -1,0 +1,323 @@
+/*START of CSS reset*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd,
+q, s, samp,small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt,
+dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot,
+thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark,
+audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu,
+nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1.2;
+}
+
+ol {
+	padding-left: 1.4em;
+	list-style: decimal;
+}
+
+ul {
+	padding-left: 1.4em
+	list-style: square;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*END of CSS reset*/
+
+
+* 
+{
+	-moz-box-sizing: padding-box;
+	-webkit-box-sizing: padding-box;
+	box-sizing: padding-box;
+}
+
+html 
+{
+	height: 100%; 
+}
+
+
+body 
+{
+	width: 100%;
+	margin: 0 auto;
+	padding: 0px 0px 0;		
+	line-height: 3;	
+	letter-spacing: 0.6px;
+	color: #333;
+	background: #FFF;
+	font-family: 'Open Sans', Georgia, sans-serif;
+	-webkit-text-size-adjust: 100%;
+}
+
+
+
+nav 
+{
+	background-color: #fff;
+	border: 0px solid #dedede;
+	border-radius: 0px;
+	box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.045);
+	color: #888;
+	display: block;
+	margin: 0px 0px 0px 0px;
+	overflow: hidden;
+	width: 100%;
+	height: 50px; 		
+
+}
+
+	nav ul 
+	{
+		margin: 0;
+		padding: 0;
+	}
+		
+
+			nav ul li 
+			{
+				display: inline;
+				list-style-type: none;
+				padding: 0 20px;
+				float: right;	
+			}
+
+			nav ul li.logo 
+			{
+				float:left;
+				width: 141px;
+				height: 49px;					
+				background: url(../img/sprites.png) no-repeat left top;
+
+				-webkit-transition: all 5ms;
+				-moz-transition: all 5ms;
+				-ms-transition: all 5ms;
+				-o-transition: all 5ms;
+				transition: all 5ms; 
+			}
+
+			nav ul li.logo:hover 
+			{
+				background-position: 0 -53px;
+			}
+			
+			
+				nav > ul > li > a 
+				{
+					color: #aaa;
+					display: inline-block;
+					line-height: 49px;
+					text-decoration: none;
+					font-size: 0.96em;
+					letter-spacing: 0.7px;
+				}
+
+					nav > ul > li > a > .caret 
+					{
+						border-top: 5px solid #aaa;
+						border-right: 5px solid transparent;
+						border-left: 5px solid transparent;
+						content: "";
+						display: inline-block;
+						height: 0;
+						width: 0;
+						vertical-align: middle;
+						
+						-webkit-transition: color 0.1s linear;
+						-moz-transition: color 0.1s linear;
+						-o-transition: color 0.1s linear;
+						  transition: color 0.1s linear; 
+					}
+
+					        nav > ul > li:hover > a 
+					        {
+					          color: rgb(133,161,16);
+					        }
+
+						        /*nav > ul > li:hover > a > .caret {
+						          border-top-color: rgb( 255, 255, 255 );
+						        }*/
+
+					        	
+
+#searchBox 
+{
+	padding: 0 11px 0 13px;
+	margin-left: 40px;	
+	margin-top: 16px;
+	border-color: transparent;
+	border: 1px solid transparent; 
+	border-radius: 6px;
+	height: 35px;	
+	width: 400px;
+	outline: none;
+	-webkit-box-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);	
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);	
+	box-sizing: border-box;
+	background-color: #fff;
+	font-family: Roboto;
+	font-size: 19px;
+	font-weight: 300;
+	text-overflow: ellipsis;
+}
+
+#searchBox:focus 
+{
+	box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, .2);
+}
+
+.movie
+{
+	margin:50px;
+	padding:0px;
+	width: 100%;
+}
+
+.movie figure{
+	display:inline-block;
+	margin: 25px;
+	position: relative;
+}
+
+/*figure:hover figcaption {
+	opacity: 1;
+}*/
+
+.movie img{
+/*	resize picture proportionally*/	
+	max-width: 350px;
+	height: auto;
+}
+
+.movie figcaption {
+	position: absolute;   /*vertically align: set inner container absolute and 
+							fixed height then halve of it as margin-top;*/
+	/*height:5em;
+	margin-top: -2.5em;*/
+
+	top: 60%;
+	bottom: 6.8%;
+	left: 0;
+	right: 0;
+	word-wrap: break-word;
+	background-color: rgb(153,153,153);
+	background-color: rgba(153,153,153,.6);
+	padding: 15px;
+	color: white;
+	
+	/*font-family: Titillium, Arial, sans-serif;
+	font-weight: 400;
+	font-size: .9em;
+	opacity: 0;
+	-webkit-transition: opacity .75s ease-out;
+	-moz-transition: opacity .75s ease-out;
+	-o-transition: opacity .75s ease-out;
+	transition: opacity .75s ease-out;*/
+	
+}
+
+.movie .wish_button{
+	position: absolute;
+	height:1.4em;
+	margin: 0 auto;  /*center the button */
+	top: 30%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+
+form.signup_form
+{
+	width: 100%;
+	position: absolute;
+}
+
+	div.join
+	{
+		display:none;
+		position: relative;
+		top: 30%;
+		left:10%;
+
+	}
+
+		.join-btn
+		{
+			position:relative;
+			left: 23%;
+			top: 20%;
+		}
+
+label.input 
+{
+  	display: block;
+  	position: relative;
+  	margin: 5px;
+  	font-family: 'Open Sans', Georgia, sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+	.input span.label
+	{
+	  position:absolute;
+	  /*padding: 0px;*/
+	  margin-left: 9px;
+	  color: #999;
+	  z-index: 1;
+	  cursor: text;
+	  pointer-events: none;
+	}
+
+
+
+input[type=text],
+input[type=email],
+input[type=password]
+{
+   	z-index: 0;
+	padding: 6px;
+	margin: 0;
+	/* required to properly style form 
+   elements on WebKit based browsers */
+  	-webkit-appearance: none;
+	border: 1px solid transparent; 
+	border-radius: 4px;  
+  	-webkit-box-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);		
+	box-shadow: 0px 0px 1.8px rgba(0, 0, 0, 0.3);	
+}
+
+form input.parsley-error
+{
+	color: #B94A48 !important;
+	background-color: #F2DEDE !important;
+	border: 1px solid #EEA3D7 !important;
+}
+
+form span.errorMessage
+{
+	color:#B94A48;
+	margin: 5px;
+}
+
+
+
+
+

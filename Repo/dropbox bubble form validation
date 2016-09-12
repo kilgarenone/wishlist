@@ -1,0 +1,131 @@
+$("#signup_form").submit(function(e){
+
+		
+
+		if($('form').attr('class') == "signup_form"){
+			e.preventDefault();
+			$( "div.join" ).slideDown(400, function(){
+		  		$("#username").focus();
+		  		$("form.register").attr('class', "form_shown");
+		  	});
+		 }
+
+		
+
+		if($('form').attr('class') == "form_shown"){
+			console.log("class is form_shown");
+
+			
+			
+		}
+
+
+	 });
+
+
+	$("#username, #email, #password").keyup(function(event){
+		var targetId = event.target.id,
+			target = document.getElementById(targetId),
+			errorMsg = $(event.target).next();
+		
+		if (target.validity.valid) {
+		    // In case there is an error message visible, if the field
+		    // is valid, we remove the error message.
+		    errorMsg.html(""); // Reset the content of the message
+		    errorMsg.attr('class', 'errorBubble') ;// Reset the visual state of the message
+	  	}
+	  	else{
+	  		errorMsg.attr('class', 'errorBubble') ;
+	  	}	
+	  	
+
+	});
+
+
+
+	$("#username, #email, #password").blur(function(event){
+		var targetId = event.target.id,
+			target = document.getElementById(targetId),
+			errorMsg = $(event.target).next();
+
+
+		if(target.validity.valueMissing){			  
+		
+			errorMsg.html(target.validationMessage) ;
+		    errorMsg.attr('class', 'errorActive') ;
+		    return;  
+		}
+
+		if (!target.validity.valid) {			    			   
+
+	   		errorMsg.html(target.validationMessage);
+		    errorMsg.attr('class', 'errorActive') ;				
+		   	return;
+		}
+	});
+
+
+.errorBubble{
+	display:none;
+}
+
+
+.errorActive
+{
+	position: absolute;
+	color: rgb(213, 138, 138);
+	font-size: 0.8em;
+
+	left: 225px;
+	top:7px;
+	height: 32px;
+	padding: 5px 6px;
+	background: rgb(255, 244, 244);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: rgb(213, 138, 138) solid 1px;
+}
+
+
+.errorActive:before
+{
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 6px 6px 6px 0;
+	border-color: transparent rgb(213, 138, 138);
+	display: block;
+	width: 0;
+	z-index: 0;
+	left: -7px;
+	top: 8px;
+
+}
+
+
+.errorActive:after 
+{
+	content: '';
+	position: absolute;
+	left: -6px;
+	top: 8px;
+	border-style: solid;
+	border-width: 6px 6px 6px 0;
+	border-color: transparent rgb(255, 244, 244);
+	display: block;
+	width: 0;
+	z-index: 1;
+
+}
+
+
+/*.errorMessage{
+	display:inline-block;
+	vertical-align: 2px;
+	color: rgb(213, 138, 138);
+	font-size: 0.8em;
+}
+
+*/
+
